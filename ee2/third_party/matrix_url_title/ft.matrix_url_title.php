@@ -123,4 +123,42 @@ class Matrix_url_title_ft extends EE_Fieldtype {
 		return $r;
 	}
 
+	// --------------------------------------------------------------------
+
+	/**
+	 * Save Cell
+	 */
+	function save_cell($data)
+	{
+		// is this a new row?
+		$new = (substr($this->settings['row_name'], 0, 8) == 'row_new_');
+
+		if (! $new)
+		{
+			// get the row ID
+			$row_id = substr($this->settings['row_name'], 7);
+		}
+
+		// try up to 50 different URL titles
+		for ($i = 0; $i < 50; $i++)
+		{
+			$temp = $i ? $data.$i : $data;
+
+			$this->EE->db->select('count(row_id) AS count')
+			             ->where('field_id', $this->settings['field_id'])
+			             ->where($this->settings['col_name'], $temp);
+
+			if (! $new)
+			{
+				// make sure to ignore this current row
+				$this->EE->db->where('row_id !=', $row_id);
+			}
+
+			// get the count
+			$count = $this->EE->db->get('matrix_data')->row('count');
+
+			if (! $count) return $temp;
+		}
+	}
+
 }
