@@ -12,7 +12,7 @@ class Matrix_url_title_ft extends EE_Fieldtype {
 
 	var $info = array(
 		'name' => 'Matrix URL Title',
-		'version' => '0.1'
+		'version' => '1.0'
 	);
 
 	var $default_settings = array(
