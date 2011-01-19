@@ -25,7 +25,7 @@ h4. Here’s how you can give a URL Title to one of your Matrix fields:
 
 h4. Creating a “Single Row Page” using your URL Title
 
-In ExpressionEngine, a “Single Entry Page” is where the first URL segment that doesn’t map to a template group or template name, does match an entry’s URL Title. ExpressionEngine will automatically return just that one entry within your @{exp:channel:entries}@ tags. (To get any other entries out of the tag, you have to add “@dynamic="no"@”.)
+In ExpressionEngine, a “Single Entry Page” is where the first URL segment that doesn’t map to a template group or template name, does match an entry’s URL Title. ExpressionEngine will automatically return just that one entry within your @{exp:channel:entries}@ tags. (To get any other entries out of the tag, you have to add @dynamic="no"@.)
 
 Matrix doesn’t have any sort of automatic “Single Row Page” display mode yet, but you can get it working yourself using Matrix’s @search:col_name=@ parameter.
 
