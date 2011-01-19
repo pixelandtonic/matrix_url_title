@@ -1,0 +1,36 @@
+h1. Matrix URL Title celltype
+
+This celltype for Matrix on EE2 gives you the ability to create unique “URL Titles” within your Matrix fields.
+
+h3. Requirements
+
+* "ExpressionEngine 2":http://expressionengine.com/index.php?affiliate=brandonkelly&page=/public_beta/
+* "Matrix":http://pixelandtonic.com/matrix 2.0.8 or later
+
+h3. Installation
+
+* Upload the ee2/third_party/matrix_url_title folder to system/expressionengine/third_party/
+* Upload the themes/third_party/matrix_url_title folder to themes/third_party/
+* Enable Matrix URL Title in Add-Ons → Fieldtypes
+
+h3. Usage
+
+h4. Here’s how you can give a URL Title to one of your Matrix fields:
+
+* Edit your Matrix field in Admin → Channel Administration → Custom Channel Fields
+* Click the “+” button beside your Matrix Configuration
+* Set your new column’s Cell Type to “Matrix URL Title”
+* Give your new column a name, such as “matrix_url_title”
+* If you want your URL Title value to be automatically generated based on the value of another column, enter the “title” column’s Col Name into the “Title Col Name” setting
+
+h4. Creating a “Single Row Page” using your URL Title
+
+In ExpressionEngine, a “Single Entry Page” is where the first URL segment that doesn’t map to a template group or template name, does match an entry’s URL Title. ExpressionEngine will automatically return just that one entry within your @{exp:channel:entries}@ tags. (To get any other entries out of the tag, you have to add “@dynamic="no"@”.)
+
+Matrix doesn’t have any sort of automatic “Single Row Page” display mode yet, but you can get it working yourself using Matrix’s @search:col_name=@ parameter.
+
+Let’s say that your URL structure is like so: _/gallery/entry_url_title/matrix_row_url_title/_
+
+In that case, @{segment_3}@ is going to be set to your Matrix URL Title. So to filter your Matrix row by whatever was entered into that URL segment, you’d do this:
+
+@{matrix_field search:url_title_col_name="{segment_3}" limit="1"}@
