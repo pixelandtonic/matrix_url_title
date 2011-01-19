@@ -33,4 +33,4 @@ Let’s say that your URL structure is like so: _/gallery/entry_url_title/matrix
 
 In that case, @{segment_3}@ is going to be set to your Matrix URL Title. So to filter your Matrix row by whatever was entered into that URL segment, you’d do this:
 
-@{matrix_field search:url_title_col_name="{segment_3}" limit="1"}@
+bc.. {matrix_field search:url_title_col_name="{segment_3}" limit="1"}
