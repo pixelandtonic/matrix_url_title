@@ -4,7 +4,7 @@ This celltype for Matrix on EE2 gives you the ability to create unique “URL Ti
 
 h3. Requirements
 
-* "ExpressionEngine 2":http://expressionengine.com/index.php?affiliate=brandonkelly&page=/public_beta/
+* "ExpressionEngine 2":http://expressionengine.com/index.php?affiliate=brandonkelly
 * "Matrix":http://pixelandtonic.com/matrix 2.0.8 or later
 
 h3. Installation
