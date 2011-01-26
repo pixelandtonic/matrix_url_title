@@ -130,6 +130,9 @@ class Matrix_url_title_ft extends EE_Fieldtype {
 	 */
 	function save_cell($data)
 	{
+		// ignore if empty or numeric
+		if (! $data || is_numeric($data)) return '';
+
 		// is this a new row?
 		$new = (substr($this->settings['row_name'], 0, 8) == 'row_new_');
 
