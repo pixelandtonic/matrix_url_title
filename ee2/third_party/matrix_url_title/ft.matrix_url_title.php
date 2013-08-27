@@ -3,7 +3,7 @@
 
 /**
  * Matrix URL Title Celltype Class for EE2
- * 
+ *
  * @package   Matrix
  * @author    Brandon Kelly <brandon@pixelandtonic.com>
  * @copyright Copyright (c) 2011 Pixel & Tonic, Inc
@@ -100,6 +100,14 @@ class Matrix_url_title_ft extends EE_Fieldtype {
 	}
 
 	// --------------------------------------------------------------------
+
+	/**
+	 * Display Field
+	 */
+	function display_field($data)
+	{
+		return 'This fieldtype only works within Matrix fields.';
+	}
 
 	/**
 	 * Display Cell
