@@ -31,7 +31,7 @@ Matrix.bind('matrix_url_title', 'display', function(cell){
 
 		$titleInput.bind('blur, keyup', function() {
 			// start with the Title value
-			var val = $titleInput.val();
+			var val = $(this).val();
 
 			// make it lowercase and use the correct word separator
 			val = val.toLowerCase().replace(wrongSep, sep);
@@ -44,7 +44,7 @@ Matrix.bind('matrix_url_title', 'display', function(cell){
 				if (charCode >= 32 && charCode < 128)
 					asciiVal += val.charAt(c);
 				else if (charCode in EE.publish.foreignChars)
-					asciiVal += EE.publish.foreignChars[charCode]
+					asciiVal += EE.publish.foreignChars[charCode];
 			}
 			val = asciiVal;
 
